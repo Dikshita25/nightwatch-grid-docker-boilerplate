@@ -1,4 +1,5 @@
 const { browser } = require('nightwatch');
+const nightwatchConfig = require('../nightwatch.conf.js');
 
 module.exports = {
   elements: {
@@ -12,7 +13,7 @@ module.exports = {
   commands: [
     {
       openUrl() {
-        return this.api.url('https://github.com/');
+        return this.api.url(nightwatchConfig.test_settings.default.launch_url);
       },
       setEmail(email) {
         return this.assert
