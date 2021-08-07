@@ -21,7 +21,7 @@
     "format:check": "npm run pretty -- --list-different",
     "lint": "npm run lint:dockerfile && npm run format:check",
     "lint:dockerfile": "dockerfilelint Dockerfile",
-    "parallel-execution": "nightwatch -e chrome,firefox",
+    "nightwatch": "nightwatch -e chrome,firefox",
     "nightwatch-debug": "nightwatch -e chromeDebug,firefoxDebug",
     "postinstall": "husky install",
     "start": "bin/start",
