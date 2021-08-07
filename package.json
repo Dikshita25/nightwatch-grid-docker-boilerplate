@@ -1,17 +1,55 @@
 {
-  "name": "nightwatch",
+  "name": "nightwatch-docker-grid",
   "version": "1.0.0",
-  "description": "Selenium grid with nightwatch",
-  "main": "index.js",
-  "scripts": {
-    "test": "nightwatch -e chrome",
-    "parallel-execution": "nightwatch -e chrome,firefox",
-    "default": "nightwatch -e hub",
-    "normal": "nightwatch"
+  "description": "A dockerized Selenium grid for executing Selenium-driven Nightwatch.js tests against your dockerized web app",
+  "main": "",
+  "directories": {
+    "test": "tests"
   },
-  "author": "Dikshita shirodkar",
-  "license": "ISC",
   "dependencies": {
     "nightwatch": "^1.6.0"
+  },
+  "devDependencies": {
+    "dockerfilelint": "^1.8.0",
+    "husky": "^5.2.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "pretty": "prettier --ignore-path ./.gitignore \"*.+(yaml|yml|js|json|md)\"",
+    "format": "npm run pretty -- --write",
+    "format:check": "npm run pretty -- --list-different",
+    "lint": "npm run lint:dockerfile && npm run format:check",
+    "lint:dockerfile": "dockerfilelint Dockerfile",
+    "parallel-execution": "nightwatch -e chrome,firefox",
+    "nightwatch-debug": "nightwatch -e chromeDebug,firefoxDebug",
+    "postinstall": "husky install",
+    "start": "bin/start",
+    "start:debug": "bin/start-debug",
+    "stop": "bin/stop",
+    "test": "bin/test",
+    "test:debug": "bin/test-debug",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mycargus/nightwatch-docker-grid.git"
+  },
+  "keywords": [
+    "docker",
+    "selenium",
+    "grid",
+    "nightwatch",
+    "javascript"
+  ],
+  "author": "Michael Hargiss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mycargus/nightwatch-docker-grid/issues"
+  },
+  "homepage": "https://github.com/mycargus/nightwatch-docker-grid#readme",
+  "lint-staged": {
+    "Dockerfile": "npm run lint:dockerfile",
+    "*.{yaml|yml|js|json|md}": "npm run format"
   }
 }
