@@ -20,7 +20,7 @@ services:
   nightwatch:
     build:
       context: .
-    command: npm run parallel-execution
+    command: ./scripts/run_nightwatch.sh
     networks:
       - nightwatch-docker-grid-network
     logging: *LOG
