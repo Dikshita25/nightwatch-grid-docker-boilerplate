@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nightwatch -e chrome",
-    "parallel-execution": "nightwatch -e firefox,chrome",
+    "parallel-execution": "nightwatch -e chrome,firefox",
     "default": "nightwatch -e hub",
     "normal": "nightwatch"
   },
