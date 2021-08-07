@@ -1,0 +1,17 @@
+{
+  "name": "nightwatch",
+  "version": "1.0.0",
+  "description": "Selenium grid with nightwatch",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch -e chrome",
+    "parallel-execution": "nightwatch -e firefox,chrome",
+    "default": "nightwatch -e hub",
+    "normal": "nightwatch"
+  },
+  "author": "Dikshita shirodkar",
+  "license": "ISC",
+  "dependencies": {
+    "nightwatch": "^1.7.7"
+  }
+}
