@@ -1,9 +1,8 @@
----
 version: '3.7'
 
 services:
   hub:
-    image: selenium/hub:latest
+    image: selenium/hub:3.0.1
     environment:
       GRID_BROWSER_TIMEOUT: 120000
       GRID_NEW_SESSION_WAIT_TIMEOUT: 8000
@@ -27,7 +26,7 @@ services:
     logging: *LOG
 
   node-chrome:
-    image: selenium/node-chrome:latest
+    image: selenium/node-chrome:3.0.1
     environment: &SELENIUM_NODE_ENV
       # this is a necessary workaround due to a known bug
       # https://github.com/SeleniumHQ/docker-selenium/issues/133
@@ -38,7 +37,7 @@ services:
     logging: *LOG
 
   node-chrome-debug:
-    image: selenium/node-chrome-debug:latest
+    image: selenium/node-chrome-debug:3.0.1
     environment:
       <<: *SELENIUM_NODE_ENV
     ports:
@@ -48,7 +47,7 @@ services:
     logging: *LOG
 
   node-firefox:
-    image: selenium/node-firefox:latest
+    image: selenium/node-firefox:3.0.1
     environment:
       <<: *SELENIUM_NODE_ENV
     networks:
@@ -56,7 +55,7 @@ services:
     logging: *LOG
 
   node-firefox-debug:
-    image: selenium/node-firefox-debug:latest
+    image: selenium/node-firefox-debug:3.0.1
     environment:
       <<: *SELENIUM_NODE_ENV
     ports:
