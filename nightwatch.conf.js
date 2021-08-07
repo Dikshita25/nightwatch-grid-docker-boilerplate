@@ -1,7 +1,6 @@
 module.exports = {
   src_folders: ['tests'],
   page_objects_path: ['page-objects'],
-
   test_settings: {
     default: {
       launch_url: 'https://github.com/',
@@ -12,28 +11,28 @@ module.exports = {
       screenshots: {
         enabled: true,
         on_failure: true,
-        path: 'tests_output/screenshots'
-      }
+        path: 'tests_output/screenshots',
+      },
     },
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome'
-      }
+      },
     },
     firefox: {
       desiredCapabilities: {
-        browserName: 'firefox'
-      }
+        browserName: 'firefox',
+      },
     },
     chromeDebug: {
       desiredCapabilities: {
-        browserName: 'chrome'
-      }
+        browserName: 'chrome',
+      },
     },
     firefoxDebug: {
       desiredCapabilities: {
-        browserName: 'firefox'
-      }
-    }
-  }
-};
+        browserName: 'firefox',
+      },
+    },
+  },
+}
