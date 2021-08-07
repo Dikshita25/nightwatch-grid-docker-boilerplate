@@ -12,6 +12,6 @@
   "author": "Dikshita shirodkar",
   "license": "ISC",
   "dependencies": {
-    "nightwatch": "^1.7.7"
+    "nightwatch": "^1.6.0"
   }
 }
