@@ -3,7 +3,7 @@ version: '3.7'
 
 services:
   hub:
-    image: selenium/hub:latest
+    image: selenium/hub:3.0.1
     environment:
       GRID_BROWSER_TIMEOUT: 120000
       GRID_NEW_SESSION_WAIT_TIMEOUT: 8000
@@ -25,7 +25,7 @@ services:
       - node-firefox
 
   node-chrome:
-    image: selenium/node-chrome:latest
+    image: selenium/node-chrome:3.0.1
     depends_on:
       - hub
     links:
@@ -37,7 +37,7 @@ services:
       HUB_PORT_4444_TCP_PORT: 4444
 
   node-firefox:
-    image: selenium/node-firefox:latest
+    image: selenium/node-firefox:3.0.1
     depends_on:
       - hub
     links:

@@ -1,7 +1,7 @@
 {
-  "name": "nightwatch-docker-grid",
+  "name": "grid-nightwatch-docker",
   "version": "1.0.0",
-  "description": "A dockerized Selenium grid for executing Selenium-driven Nightwatch.js tests against your dockerized web app",
+  "description": "A dockerized grid (selenium) for executing nightwatch.js tests",
   "main": "",
   "directories": {
     "test": "tests"
@@ -9,27 +9,8 @@
   "dependencies": {
     "nightwatch": "^1.7.8"
   },
-  "devDependencies": {
-    "dockerfilelint": "^1.8.0",
-    "husky": "^5.2.0",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1"
-  },
   "scripts": {
-    "pretty": "prettier --ignore-path ./.gitignore \"*.+(yaml|yml|js|json|md)\"",
-    "format": "npm run pretty -- --write",
-    "format:check": "npm run pretty -- --list-different",
-    "lint": "npm run lint:dockerfile && npm run format:check",
-    "lint:dockerfile": "dockerfilelint Dockerfile",
-    "nightwatch": "nightwatch -e chrome,firefox",
-    "nightwatch-debug": "nightwatch -e chromeDebug,firefoxDebug",
-    "postinstall": "husky install",
-    "start": "bin/start",
-    "start:debug": "bin/start-debug",
-    "stop": "bin/stop",
-    "test": "bin/test",
-    "test:debug": "bin/test-debug",
-    "prepare": "husky install"
+    "nightwatch": "nightwatch -e chrome,firefox"
   },
   "repository": {
     "type": "git",
