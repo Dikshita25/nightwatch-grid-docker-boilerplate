@@ -1,5 +1,5 @@
 
-FROM alpine:3
+FROM alpine:latest
 
 USER root
 
