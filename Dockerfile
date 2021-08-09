@@ -1,3 +1,4 @@
+
 FROM alpine:3
 
 USER root
@@ -14,7 +15,7 @@ RUN groupadd -r docker && useradd --no-log-init -r -g docker docker
 RUN chown -R docker $HOME
 
 RUN apk add npm nodejs
-# apk --no-cache add \
+# RUN apk --no-cache add \
 #     nodejs-current \
 #     nodejs-current-npm \
 #     # clean up obsolete files
@@ -30,7 +31,7 @@ RUN chown -R docker $APP_DIR
 
 WORKDIR $APP_DIR
 
-COPY --chown=docker:docker package.json ./
+COPY --chown=docker:docker package.json package-lock.json ./
 
 # switch to docker user to ensure correct permissions for npm dependencies
 USER docker
