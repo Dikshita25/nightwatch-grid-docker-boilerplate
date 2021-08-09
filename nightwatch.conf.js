@@ -4,35 +4,38 @@ module.exports = {
   test_settings: {
     default: {
       launch_url: 'https://github.com/',
-      selenium_host: 'hub',
       desiredCapabilities: {
         browserName: 'chrome'
+      },
+      selenium: {
+        host: 'hub',
+        port: 4444
       },
       screenshots: {
         enabled: true,
         on_failure: true,
-        path: 'tests_output/screenshots',
-      },
+        path: 'tests_output/screenshots'
+      }
     },
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome'
-      },
+      }
     },
     firefox: {
       desiredCapabilities: {
-        browserName: 'firefox',
-      },
+        browserName: 'firefox'
+      }
     },
     chromeDebug: {
       desiredCapabilities: {
-        browserName: 'chrome',
-      },
+        browserName: 'chrome'
+      }
     },
     firefoxDebug: {
       desiredCapabilities: {
-        browserName: 'firefox',
-      },
-    },
-  },
-}
+        browserName: 'firefox'
+      }
+    }
+  }
+};
