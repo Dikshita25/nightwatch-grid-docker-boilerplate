@@ -6,23 +6,12 @@ USER root
 ENV HOME /home
 ENV APP_DIR $HOME/docker/app
 
-# http://pkg-shadow.alioth.debian.org/features.php
-ENV TEMPORARY_DEPENDENCIES='shadow'
-RUN apk --no-cache add bash ${TEMPORARY_DEPENDENCIES}
 
 # add user as per: https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#user
 RUN groupadd -r docker && useradd --no-log-init -r -g docker docker
 RUN chown -R docker $HOME
 
 RUN apk add npm nodejs
-# RUN apk --no-cache add \
-#     nodejs-current \
-#     nodejs-current-npm \
-#     # clean up obsolete files
-#     && rm -rf /tmp/* /root/.npm
-
-# clean no longer needed dependencies
-RUN apk del ${TEMPORARY_DEPENDENCIES}
 
 # create directories
 RUN mkdir -p $APP_DIR
@@ -48,8 +37,8 @@ USER root
 # will force docker to rebuild the "npm install" layer above)
 COPY --chown=docker:docker . ./
 
-ENV NODE_ENV=test
-ENV TESTS_DIRECTORY=tests
-ENV PATH="${PATH}:${APP_DIR}/node_modules/nightwatch/bin"
+# ENV NODE_ENV=test
+# ENV TESTS_DIRECTORY=tests
+# ENV PATH="${PATH}:${APP_DIR}/node_modules/nightwatch/bin"
 
 USER docker

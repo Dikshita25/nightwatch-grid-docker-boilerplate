@@ -15,7 +15,7 @@ services:
   nightwatch:
     build:
       context: .
-    command: ./scripts/run_nightwatch.sh
+    command: npm run nightwatch
     depends_on:
       - hub
       - node-chrome

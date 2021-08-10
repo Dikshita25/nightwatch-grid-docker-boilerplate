@@ -26,16 +26,6 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'firefox'
       }
-    },
-    chromeDebug: {
-      desiredCapabilities: {
-        browserName: 'chrome'
-      }
-    },
-    firefoxDebug: {
-      desiredCapabilities: {
-        browserName: 'firefox'
-      }
     }
   }
 };
