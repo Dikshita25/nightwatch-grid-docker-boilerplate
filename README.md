@@ -3,10 +3,12 @@
 This is a built-in biolerplate project which will help you build a dockerized app for running the nightwatch tests in a parallel dockerized environment, using the concept of Selenium-grid(hub-nodes)
 As we know, selenium hub is a central grid for all the nodes, it accepts request and executes the tests on the available nodes.
 
+![docker-nightwatch](/images/docker-nightwatch.png)
+
 ### Structure
 
 ```
-grid-Nightwatch
+nightwatch-grid-docker-boilerplate
 
 └─── page-objects
 │    └─── gitPage.js
@@ -35,13 +37,13 @@ grid-Nightwatch
 1. Clone the repo, using command:
 
 ```
-$ git clone https://github.com/Dikshita25/seleniumGridNightwatch
+$ git clone https://github.com/Dikshita25/nightwatch-grid-docker-boilerplate.git
 ```
 
 2. Navigate to the directory:
 
 ```
-$ cd selenium-grid-with-nightwatchJs
+$ cd nightwatch-grid-docker-boilerplate
 ```
 
 3. Run the docker-compose.yml file using command:
